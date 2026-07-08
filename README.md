@@ -262,9 +262,7 @@ http://127.0.0.1:8000
 
 <div align="center">
 
-<img src="screenshots/developer.png" width="220" alt="Vansh Dadeech"/>
 
-<br><br>
 
 <h3>Vansh Dadeech</h3>
 
