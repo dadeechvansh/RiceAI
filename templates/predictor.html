@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+{% block title %}Predict — RiceAI{% endblock %}
+{% block nav_predict %}nav-link--active{% endblock %}
+{% block body_class %}page-predict{% endblock %}
+
+{% block content %}
+
+<section class="predict-hero reveal">
+  <div class="section-inner">
+    <span class="eyebrow"><span class="eyebrow-dot"></span> Live Inference</span>
+    <h1>Classify a rice grain</h1>
+    <p>Enter the seven morphological measurements below. The Random Forest model returns a variety prediction with a confidence score in real time.</p>
+  </div>
+</section>
+
+<section class="predict-section reveal">
+  <div class="section-inner predict-grid">
+
+    <!-- ============ FORM ============ -->
+    <div class="predict-form-card">
+      <div class="predict-form-card__head">
+        <h2>Grain Measurements</h2>
+        <span class="badge-model">Random Forest</span>
+      </div>
+
+      <form id="predictForm" class="predict-form" autocomplete="off">
+        <div class="field">
+          <label for="area">Area</label>
+          <div class="input-wrap">
+            <input type="number" step="any" id="area" name="Area" placeholder="e.g. 15231" required>
+            <span class="input-unit">px²</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="perimeter">Perimeter</label>
+          <div class="input-wrap">
+            <input type="number" step="any" id="perimeter" name="Perimeter" placeholder="e.g. 525.578" required>
+            <span class="input-unit">px</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="majorAxis">Major Axis Length</label>
+          <div class="input-wrap">
+            <input type="number" step="any" id="majorAxis" name="Major_Axis_Length" placeholder="e.g. 229.749" required>
+            <span class="input-unit">px</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="minorAxis">Minor Axis Length</label>
+          <div class="input-wrap">
+            <input type="number" step="any" id="minorAxis" name="Minor_Axis_Length" placeholder="e.g. 85.093" required>
+            <span class="input-unit">px</span>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="eccentricity">Eccentricity</label>
+          <div class="input-wrap">
+            <input type="number" step="any" min="0" max="1" id="eccentricity" name="Eccentricity" placeholder="e.g. 0.928" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="convexArea">Convex Area</label>
+          <div class="input-wrap">
+            <input type="number" step="any" id="convexArea" name="Convex_Area" placeholder="e.g. 15617" required>
+            <span class="input-unit">px²</span>
+          </div>
+        </div>
+
+        <div class="field field--full">
+          <label for="extent">Extent</label>
+          <div class="input-wrap">
+            <input type="number" step="any" min="0" max="1" id="extent" name="Extent" placeholder="e.g. 0.712" required>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="fillSample" class="btn btn--ghost btn--sm">Use sample grain</button>
+          <button type="submit" id="submitBtn" class="btn btn--primary btn--lg btn--block">
+            <span class="btn-label">Predict Variety</span>
+            <span class="btn-spinner" aria-hidden="true"></span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- ============ RESULT ============ -->
+    <div class="predict-result-card">
+      <div class="result-card__head">
+        <h2>Prediction</h2>
+        <span class="badge-live"><span class="live-dot"></span> ready</span>
+      </div>
+
+      <div class="result-body" id="resultBody">
+
+        <!-- idle state -->
+        <div class="result-state result-state--idle" id="stateIdle">
+          <div class="idle-icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C12 2 5 8.5 5 14a7 7 0 0 0 14 0c0-5.5-7-12-7-12Z"/></svg>
+          </div>
+          <p>Fill in the grain measurements and run a prediction to see results here.</p>
+        </div>
+
+        <!-- loading state -->
+        <div class="result-state result-state--loading" id="stateLoading" hidden>
+          <div class="loader-ring"></div>
+          <p>Running inference through the Random Forest model…</p>
+        </div>
+
+        <!-- success state -->
+        <div class="result-state result-state--success" id="stateSuccess" hidden>
+          <div class="success-check">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+
+          <div class="prediction-pill" id="predictionPill">
+            <span id="predictionLabel">Cammeo</span>
+          </div>
+
+          <div class="confidence-block">
+            <div class="confidence-row">
+              <span>Confidence</span>
+              <span id="confidenceValue">0%</span>
+            </div>
+            <div class="confidence-track">
+              <div class="confidence-fill" id="confidenceFill"></div>
+            </div>
+          </div>
+
+          <div class="result-meta">
+            <div class="result-meta__item">
+              <span class="result-meta__label">Best Model</span>
+              <span class="result-meta__value">Random Forest</span>
+            </div>
+            <div class="result-meta__item">
+              <span class="result-meta__label">Model Accuracy</span>
+              <span class="result-meta__value">91.99%</span>
+            </div>
+          </div>
+
+          <button type="button" id="resetBtn" class="btn btn--ghost btn--sm btn--block">Run another prediction</button>
+        </div>
+
+        <!-- error state -->
+        <div class="result-state result-state--error" id="stateError" hidden>
+          <div class="error-icon">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v5M12 16h.01"/></svg>
+          </div>
+          <p id="errorMessage">Something went wrong while contacting the prediction service.</p>
+          <button type="button" id="retryBtn" class="btn btn--ghost btn--sm">Try again</button>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}
+

@@ -1,0 +1,61 @@
+{
+    "timestamp": "2026-07-08 18:39:13",
+    "dataset_shape": {
+        "rows": 3810,
+        "columns": 8
+    },
+    "features": [
+        "Area",
+        "Perimeter",
+        "Major_Axis_Length",
+        "Minor_Axis_Length",
+        "Eccentricity",
+        "Convex_Area",
+        "Extent"
+    ],
+    "best_model": "Random Forest",
+    "best_model_accuracy": 0.9199,
+    "best_model_cv_score": 0.9278,
+    "models": {
+        "Logistic Regression": {
+            "accuracy": 0.9186,
+            "precision": 0.9189,
+            "recall": 0.9186,
+            "f1_score": 0.9183,
+            "cv_mean_accuracy": 0.9344,
+            "cv_std_accuracy": 0.0068
+        },
+        "Decision Tree": {
+            "accuracy": 0.9121,
+            "precision": 0.912,
+            "recall": 0.9121,
+            "f1_score": 0.9119,
+            "cv_mean_accuracy": 0.9239,
+            "cv_std_accuracy": 0.0084
+        },
+        "KNN": {
+            "accuracy": 0.916,
+            "precision": 0.9161,
+            "recall": 0.916,
+            "f1_score": 0.9158,
+            "cv_mean_accuracy": 0.9278,
+            "cv_std_accuracy": 0.0068
+        },
+        "SVM": {
+            "accuracy": 0.9186,
+            "precision": 0.9188,
+            "recall": 0.9186,
+            "f1_score": 0.9184,
+            "cv_mean_accuracy": 0.9341,
+            "cv_std_accuracy": 0.0081
+        },
+        "Random Forest": {
+            "accuracy": 0.9199,
+            "precision": 0.9203,
+            "recall": 0.9199,
+            "f1_score": 0.9196,
+            "cv_mean_accuracy": 0.9278,
+            "cv_std_accuracy": 0.0077
+        }
+    }
+}
