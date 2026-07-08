@@ -256,26 +256,49 @@ http://127.0.0.1:8000
 - Cloud deployment
 
 ---
+---
 
-# Developer
+<h2 align="center">👨‍💻 Developer</h2>
 
-## Vansh Dadeech
+<div align="center">
 
-**B.Tech Computer Science (Artificial Intelligence & Machine Learning)**
+<img src="screenshots/developer.png" width="220" alt="Vansh Dadeech"/>
+
+<br><br>
+
+<h3>Vansh Dadeech</h3>
+
+<b>B.Tech Computer Science (Artificial Intelligence & Machine Learning)</b>
 
 Model Institute of Engineering & Technology (MIET), Jammu
 
-Passionate about Machine Learning, Artificial Intelligence, FastAPI, and building intelligent web applications.
+<br><br>
 
-**GitHub**  
-https://github.com/dadeechvansh
+Passionate about Machine Learning, Artificial Intelligence, FastAPI,
+and building intelligent web applications using Python and Scikit-learn.
 
-**LinkedIn**  
-https://linkedin.com/in/vanshdadeech
+<br><br>
 
-**Instagram**  
-https://instagram.com/vanxh_77
+<a href="https://github.com/dadeechvansh">
+<img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"/>
+</a>
+
+<a href="https://linkedin.com/in/vanshdadeech">
+<img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white"/>
+</a>
+
+<a href="https://instagram.com/vanxh_77">
+<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white"/>
+</a>
+
+</div>
 
 ---
 
-## ⭐ If you found this project helpful, consider giving it a Star on GitHub.
+<div align="center">
+
+### ⭐ If you found this project useful, consider giving it a Star!
+
+Made with ❤️ using **Python**, **FastAPI**, and **Scikit-learn**
+
+</div>
