@@ -299,9 +299,12 @@ RiceAI/
 
 ---
 
-# 👨‍💻 About Developer
+
 
 <div align="center">
+
+# 👨‍💻 About Developer
+
 
 ## Vansh Dadeech
 
