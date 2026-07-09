@@ -254,8 +254,6 @@ RiceAI/
 ### 📊 Model Performance
 ![Model Performance](screenshots/model-performance.png)
 
-### 👨‍💻 Developer
-![Developer](screenshots/developer.png)
 
 </div>
 
@@ -299,40 +297,39 @@ RiceAI/
 
 ---
 
-## 👨‍💻 Developer
+---
+
+# 👨‍💻 About Developer
 
 <div align="center">
 
-### Made with ❤️ and a lot of ☕
+## Vansh Dadeech
 
-**Passionate about Machine Learning, AI-powered applications, and building things that work end-to-end — from data to deployment.**
+**B.Tech Computer Science & Engineering (Artificial Intelligence & Machine Learning)**  
+Model Institute of Engineering and Technology (MIET), Jammu
 
+Passionate about building end-to-end AI applications that combine **Machine Learning**, **Backend Development**, and **Modern Web Technologies**. I enjoy transforming data-driven ideas into real-world solutions with clean design, scalable architecture, and practical deployment.
+
+Currently exploring **Machine Learning**, **FastAPI**, **Data Science**, and **Artificial Intelligence**, while continuously working on projects that strengthen both technical skills and problem-solving abilities.
+
+<br>
+
+[![🌐 Live Demo](https://img.shields.io/badge/🌐_Live_Demo-RiceAI-2ea44f?style=for-the-badge)](https://riceai.onrender.com/)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/vanshdadeech)
+
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/dadeechvansh)
 
 </div>
 
 ---
 
-## ⭐ Show Your Support
-
 <div align="center">
 
-If you found **RiceAI** interesting or useful, please consider giving it a **star** ⭐ — it helps the project reach more people and motivates further development!
+### ⭐ Thanks for visiting RiceAI!
 
-### 🚀 [Try the Live App Now →](https://riceai.onrender.com/)
+If you found this project useful or interesting, consider giving it a ⭐ on GitHub.
 
-**If you like this project, don't forget to ⭐ star this repository!**
-
-[![Star History Chart](https://img.shields.io/badge/⭐-Star_this_repo-yellow?style=for-the-badge)](#)
-
-</div>
-
----
-
-<div align="center">
-
-*🌾 RiceAI — Bringing Machine Learning to the Rice Field, One Grain at a Time. 🌾*
+**Feedback, suggestions, and contributions are always welcome.**
 
 </div>
